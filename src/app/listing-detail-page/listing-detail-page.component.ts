@@ -10,7 +10,7 @@ import { fakeListings }      from '../fake-data'
 })
 export class ListingDetailPageComponent implements OnInit { 
 
-  listing: any; // actually Listing type
+  listing: Listing | any; // actually Listing type
 
   
   constructor( 
@@ -36,10 +36,10 @@ export class ListingDetailPageComponent implements OnInit {
   */
     
     // get the id from the item clicked from the current URL
-    const id = this.route.snapshot.paramMap.get('id');
+    const id: string | null = this.route.snapshot.paramMap.get('id');
 
     // get the item corresponding to the id in the current URL
     this.listing = fakeListings.find( item => item.id === id);
-     
+
   }
 }

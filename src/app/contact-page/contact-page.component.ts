@@ -28,6 +28,7 @@ export class ContactPageComponent implements OnInit {
   sendMessage(): void {
     alert('Your message has been sent !');
     this.router.navigateByUrl('/listings');
+
   }
 
 }

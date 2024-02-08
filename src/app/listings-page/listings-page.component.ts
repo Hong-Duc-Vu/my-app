@@ -10,9 +10,11 @@ import { fakeListings } from '../fake-data';
 
 export class ListingsPageComponent implements OnInit {
 
-  listings: Listing[] = [];
+  listings: Listing[];
 
-  constructor() { }
+  constructor() {
+    this.listings = [];
+   }
 
   ngOnInit(): void {
     this.listings = fakeListings;

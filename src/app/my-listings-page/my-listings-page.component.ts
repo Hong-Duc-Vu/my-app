@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { fakeMyListings } from '../fake-data';
+import { Listing } from '../types';
 
 @Component({
   selector: 'app-my-listings-page',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyListingsPageComponent implements OnInit {
 
-  constructor() { }
+  listings: Listing[];
+
+  constructor() { 
+    this.listings = [];
+  }
 
   ngOnInit(): void {
+    this.listings = fakeMyListings;
+  }
+
+  onDeleteClicked(listingId: string): void{
+    alert(`Deleting your listing with ${listingId}`);
   }
 
 }
